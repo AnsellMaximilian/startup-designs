@@ -16,18 +16,26 @@ export default function Home() {
   return (
     <main className="">
       <header className="p-2 shadow-md">
-        <div className={`${kaushan.className} text-[24px] text-fbr-main`}>
+        <div
+          className={`${kaushan.className} text-[24px] text-fbr-main container mx-auto`}
+        >
           Fish Bone Revolution
         </div>
       </header>
-      <article className={`${amatic.className} text-center mb-8`}>
-        <div className="px-2 py-12 ">
+      <article
+        className={`${amatic.className} text-center mb-8 md:mb-16 md:text-left md:flex md:max-w-5xl md:mx-auto md:items-center`}
+      >
+        <div className="px-2 py-12 md:flex-1">
           <h1
-            className={`text-fbr-main uppercase font-bold text-[32px] mb-4 w-64 mx-auto`}
+            className={`text-fbr-main uppercase font-bold text-[32px] mb-4 w-64 mx-auto md:text-5xl md:w-full`}
           >
             Broth Made From Upcycled Fish Bone
           </h1>
-          <button className="uppercase text-white bg-fbr-main px-8 py-2 rounded-full">
+          <p className="hidden md:block text-2xl text-black mb-4 font-bold">
+            A game-changer for fish conservation and cutting waste in the food
+            industry.
+          </p>
+          <button className="uppercase text-white bg-fbr-main px-8 py-2 rounded-full md:text-2xl">
             Support Us
           </button>
         </div>
@@ -35,7 +43,7 @@ export default function Home() {
           spaceBetween={0}
           effect={"fade"}
           modules={[EffectFade, Autoplay]}
-          className="mySwiper"
+          className="mySwiper md:flex-1"
           autoplay={{ delay: 1000 }}
           // parallax
         >
@@ -45,6 +53,7 @@ export default function Home() {
               src="/images/fish-bone-revolution/full-fish.jpg"
               width={680}
               height={532}
+              className="w-full"
             />
           </SwiperSlide>
           <SwiperSlide>
@@ -53,17 +62,18 @@ export default function Home() {
               src="/images/fish-bone-revolution/fish-waste.jpg"
               width={680}
               height={532}
+              className="w-full"
             />
           </SwiperSlide>
         </Swiper>
       </article>
-      <article className="mb-8 text-center px-2">
+      <article className="mb-8 text-center px-2 md:max-w-5xl md:mx-auto md:mb-16">
         <h2
-          className={`${amatic.className} text-2xl font-bold text-fbr-main mb-4`}
+          className={`${amatic.className} text-2xl font-bold text-fbr-main mb-4 md:text-[32px]`}
         >
           BROTH MADE FROM UPCYCLED FISH BROTH
         </h2>
-        <p className={`${neucha.className} mb-4`}>
+        <p className={`${neucha.className} mb-4 md:text-2xl`}>
           Our mission is to create a fish bone broth from a fish upcycling
           process that will change the way of how fish is treated and handled
           within the seafood industry and redefine what fish waste is. By
@@ -72,21 +82,21 @@ export default function Home() {
           use.
         </p>
       </article>
-      <article className="bg-fbr-light mb-8">
+      <article className="bg-fbr-light mb-8 md:max-w-5xl md:mx-auto md:mb-16 md:flex items-center">
         <Image
           alt="image"
-          className="h-[388px] object-cover"
+          className="h-[388px] object-cover md:flex-1"
           src="/images/fish-bone-revolution/broth-product.jpeg"
           width={680}
           height={532}
         />
-        <div className="text-center px-2 py-4">
+        <div className="text-center px-2 py-4 md:flex-1">
           <h2
-            className={`${amatic.className} text-2xl font-bold text-fbr-main mb-4`}
+            className={`${amatic.className} text-2xl font-bold text-fbr-main mb-4 md:text-[32px]`}
           >
             OUR PRODUCT - YUJI RAMEN STOCK
           </h2>
-          <p className={`${neucha.className} mb-4 text-[16px]`}>
+          <p className={`${neucha.className} mb-4 text-[16px] md:text-xl`}>
             The fish broth is available in 2 types. A simple fish broth that can
             be consumed on its own or added to any soup and our very own Yuji
             Ramen stock that will be sold in three authentic flavors: Shoyu (soy
@@ -95,14 +105,14 @@ export default function Home() {
             at home. It will be super easy, tasty, and nutritious.
           </p>
           <button
-            className={`${amatic.className} uppercase text-white bg-fbr-main px-8 py-2 rounded-full`}
+            className={`${amatic.className} uppercase text-white bg-fbr-main px-8 py-2 rounded-full text-[16px] md:text-2xl`}
           >
             View
           </button>
         </div>
       </article>
       <article
-        className={`mb-8 ${neucha.className} text-center flex flex-col gap-4`}
+        className={`mb-8 ${neucha.className} text-center flex flex-col gap-4 md:max-w-5xl md:mx-auto md:mb-16 md:flex-row md:items-center`}
       >
         <div className="p-4">
           <Image
@@ -150,7 +160,9 @@ export default function Home() {
           </p>
         </div>
       </article>
-      <footer className={`bg-[#4F4F4F] ${neucha.className} text-xs px-4 py-6`}>
+      <footer
+        className={`bg-[#4F4F4F] ${neucha.className} text-xs px-4 py-6 md:text-lg`}
+      >
         <div className="flex gap-2 p-2 mb-[10px]">
           <div className="text-center w-full">
             <h4 className="text-white mb-4">OUR STORIES</h4>
