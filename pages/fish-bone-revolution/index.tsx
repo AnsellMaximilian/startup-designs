@@ -7,6 +7,7 @@ import { EffectFade, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/autoplay";
+import Head from "next/head";
 
 const kaushan = Kaushan_Script({ subsets: ["latin"], weight: "400" });
 const amatic = Amatic_SC({ subsets: ["latin"], weight: ["400", "700"] });
@@ -15,6 +16,9 @@ const neucha = Neucha({ subsets: ["latin"], weight: ["400"] });
 export default function Home() {
   return (
     <main className="">
+      <Head>
+        <title>Fish Bone Revolution</title>
+      </Head>
       <header className="p-2 shadow-md">
         <div
           className={`${kaushan.className} text-[24px] text-fbr-main container mx-auto`}
