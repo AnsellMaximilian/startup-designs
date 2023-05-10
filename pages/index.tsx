@@ -1,124 +1,128 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import Image from "next/image";
+import { Montserrat } from "next/font/google";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectFade, Autoplay, Parallax } from "swiper";
 
-const inter = Inter({ subsets: ['latin'] })
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/autoplay";
+import Head from "next/head";
+import React from "react";
+
+const mont = Montserrat({ subsets: ["latin"] });
+
+const ProjectSlide: React.FC<{
+  title: string;
+  subtitle: string;
+  image: string;
+}> = ({ title, subtitle, image }) => (
+  <div className="relative w-full">
+    <Image
+      src={image}
+      alt="Project"
+      width={1280}
+      height={800}
+      className="w-full h-auto brightness-[25%]"
+    />
+    <div className="absolute top-0 h-full w-full flex justify-end flex-col p-4">
+      <h3 className="font-bold">{title}</h3>
+      <div className="text-xs">{subtitle}</div>
+    </div>
+  </div>
+);
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
+    <main className={`${mont.className}`}>
+      <article className="relative">
+        <Swiper
+          spaceBetween={0}
+          effect={"fade"}
+          modules={[EffectFade, Autoplay]}
+          className="mySwiper md:flex-1 brightness-[25%]"
+          autoplay={{ delay: 1000 }}
+          parallax
+        >
+          <SwiperSlide>
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              src="/images/fish-bone-revolution/screenshot.png"
+              alt="Project"
+              width={1280}
+              height={800}
+              className="w-full h-auto"
             />
-          </a>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              src="/images/fish-bone-revolution/screenshot.png"
+              alt="Project"
+              width={1280}
+              height={800}
+              className="w-full h-auto"
+            />
+          </SwiperSlide>
+        </Swiper>
+        <div className="absolute flex items-center flex-col justify-center text-white w-full h-full top-0 z-20 gap-4">
+          <h1 className="font-bold text-2xl">Startup Designs</h1>
+          <p className="text-base">By Ansell Maximilian</p>
+          <button className="text-base bg-main px-6 py-2 font-bold rounded-full">
+            View Projects
+          </button>
         </div>
-      </div>
+      </article>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
+      <article className="p-4">
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          src="/images/illustrations/heatmap.svg"
+          height={165.4}
+          width={288}
+          alt="Heatmap"
+          className="mx-auto mb-4"
         />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Find in-depth information about Next.js features and API.
+        <div className="text-center">
+          <div className="pb-1">This Website</div>
+          <h2 className="text-2xl font-bold pb-4">What Is This?</h2>
+          <p className="text-sm">
+            I look up startups that look interesting to me, usually on
+            kickstarter.com.
           </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+        </div>
+      </article>
+      <article className="bg-medium text-light p-4">
+        <div className="text-center mb-4">
+          <div className="pb-1">Projects</div>
+          <h2 className="text-2xl font-bold">Design Examples</h2>
+        </div>
+        <Swiper
+          spaceBetween={16}
+          className="mySwiper"
+          modules={[]}
+          slidesPerView={2}
+          centeredSlides={true}
         >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+          <SwiperSlide>
+            <ProjectSlide
+              title="Fish Bone Revolution"
+              subtitle="Didn’t Know I Was Lost"
+              image="/images/fish-bone-revolution/screenshot.png"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <ProjectSlide
+              title="Fish Bone Revolution"
+              subtitle="Didn’t Know I Was Lost"
+              image="/images/fish-bone-revolution/screenshot.png"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <ProjectSlide
+              title="Fish Bone Revolution"
+              subtitle="Didn’t Know I Was Lost"
+              image="/images/fish-bone-revolution/screenshot.png"
+            />
+          </SwiperSlide>
+        </Swiper>
+      </article>
     </main>
-  )
+  );
 }
