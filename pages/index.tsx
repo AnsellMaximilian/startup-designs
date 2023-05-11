@@ -141,7 +141,7 @@ export default function Home() {
             <h2 className="text-2xl font-bold md:text-4xl">What I Do</h2>
           </div>
           <div className="flex flex-col gap-8 md:flex-row md:justify-center">
-            <div className="bg-white px-4 py-8 rounded-[25px] text-center">
+            <div className="bg-white px-4 py-8 rounded-[25px] text-center  md:flex md:flex-col md:justify-center ">
               <Image
                 src="/images/logos/kickstarter-short.svg"
                 height={23.96}
@@ -155,7 +155,7 @@ export default function Home() {
                 kickstarter.com.
               </p>
             </div>
-            <div className="bg-white px-4 py-8 rounded-[25px] text-center">
+            <div className="bg-white px-4 py-8 rounded-[25px] text-center  md:flex md:flex-col md:justify-center">
               <Image
                 src="/images/logos/figma.svg"
                 height={57}
@@ -169,7 +169,7 @@ export default function Home() {
                 kickstarter.com.
               </p>
             </div>
-            <div className="bg-white px-4 py-8 rounded-[25px] text-center">
+            <div className="bg-white px-4 py-8 rounded-[25px] text-center  md:flex md:flex-col md:justify-center">
               <Image
                 src="/images/logos/nextjs.svg"
                 height={66}
