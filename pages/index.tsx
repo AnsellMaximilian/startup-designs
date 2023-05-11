@@ -1,7 +1,9 @@
 import Image from "next/image";
 import { Montserrat } from "next/font/google";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectFade, Autoplay, Parallax } from "swiper";
+import { EffectFade, Autoplay } from "swiper";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { VscGlobe } from "react-icons/vsc";
 
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -97,8 +99,13 @@ export default function Home() {
           spaceBetween={16}
           className="mySwiper"
           modules={[]}
-          slidesPerView={2}
+          slidesPerView={1}
           centeredSlides={true}
+          breakpoints={{
+            640: {
+              slidesPerView: 3,
+            },
+          }}
         >
           <SwiperSlide>
             <ProjectSlide
@@ -123,6 +130,80 @@ export default function Home() {
           </SwiperSlide>
         </Swiper>
       </article>
+      <article className="bg-light p-4">
+        <div className="text-center mb-4">
+          <div className="pb-1">The Process</div>
+          <h2 className="text-2xl font-bold">What I Do</h2>
+        </div>
+        <div className="flex flex-col gap-8">
+          <div className="bg-white px-4 py-8 rounded-[25px] text-center">
+            <Image
+              src="/images/logos/kickstarter-short.svg"
+              height={23.96}
+              width={81.07}
+              alt="Kickstarter Logo"
+              className="mx-auto mb-4"
+            />
+            <h3 className="text-base font-bold mb-1">Startups</h3>
+            <p className="text-sm">
+              I look up startups that look interesting to me, usually on
+              kickstarter.com.
+            </p>
+          </div>
+          <div className="bg-white px-4 py-8 rounded-[25px] text-center">
+            <Image
+              src="/images/logos/figma.svg"
+              height={57}
+              width={38}
+              alt="Figma Logo"
+              className="mx-auto mb-4"
+            />
+            <h3 className="text-base font-bold mb-1">Figma</h3>
+            <p className="text-sm">
+              I look up startups that look interesting to me, usually on
+              kickstarter.com.
+            </p>
+          </div>
+          <div className="bg-white px-4 py-8 rounded-[25px] text-center">
+            <Image
+              src="/images/logos/nextjs.svg"
+              height={66}
+              width={66}
+              alt="Nextjs Logo"
+              className="mx-auto mb-4"
+            />
+            <h3 className="text-base font-bold mb-1">NextJs</h3>
+            <p className="text-sm">
+              I look up startups that look interesting to me, usually on
+              kickstarter.com.
+            </p>
+          </div>
+        </div>
+      </article>
+      <footer className="bg-dark text-[#A8A8A8] p-4">
+        <div className="flex justify-between items-start mb-8">
+          <a href="#" className="flex gap-2 items-center text-xs">
+            <FaGithub /> <span>Source</span>
+          </a>
+          <div>
+            <div className="text-white text-xs mb-2">Ansell Maximilian</div>
+            <ul className="flex flex-col gap-1 text-[10px]">
+              <li className="flex items-center gap-2">
+                <FaGithub /> <span>Github</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <FaLinkedin /> <span>Linkedin</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <VscGlobe /> <span>Website</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="text-xs text-white text-center">
+          &copy; 2023 Ansell Maximilian. All rights reserved.
+        </div>
+      </footer>
     </main>
   );
 }
