@@ -27,8 +27,8 @@ const ProjectSlide: React.FC<{
       className="w-full h-auto brightness-[25%]"
     />
     <div className="absolute top-0 h-full w-full flex justify-end flex-col p-4">
-      <h3 className="font-bold">{title}</h3>
-      <div className="text-xs">{subtitle}</div>
+      <h3 className="font-bold md:md:text-2xl">{title}</h3>
+      <div className="text-xs md:md:text-xl">{subtitle}</div>
     </div>
   </div>
 );
@@ -65,35 +65,39 @@ export default function Home() {
           </SwiperSlide>
         </Swiper>
         <div className="absolute flex items-center flex-col justify-center text-white w-full h-full top-0 z-20 gap-4">
-          <h1 className="font-bold text-2xl">Startup Designs</h1>
-          <p className="text-base">By Ansell Maximilian</p>
-          <button className="text-base bg-main px-6 py-2 font-bold rounded-full">
+          <h1 className="font-bold text-2xl md:text-6xl">Startup Designs</h1>
+          <p className="text-base md:text-3xl">By Ansell Maximilian</p>
+          <button className="text-base bg-main px-6 py-2 font-bold rounded-full md:text-2xl">
             View Projects
           </button>
         </div>
       </article>
 
-      <article className="p-4">
-        <Image
-          src="/images/illustrations/heatmap.svg"
-          height={165.4}
-          width={288}
-          alt="Heatmap"
-          className="mx-auto mb-4"
-        />
-        <div className="text-center">
-          <div className="pb-1">This Website</div>
-          <h2 className="text-2xl font-bold pb-4">What Is This?</h2>
-          <p className="text-sm">
-            I look up startups that look interesting to me, usually on
-            kickstarter.com.
-          </p>
+      <article className="p-4 max-w-5xl md:mx-auto md:py-[64px]">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-8 md:items-center">
+          <Image
+            src="/images/illustrations/heatmap.svg"
+            height={165.4}
+            width={288}
+            alt="Heatmap"
+            className="mx-auto md:w-full"
+          />
+          <div className="text-center md:text-left">
+            <div className="pb-1 md:text-2xl">This Website</div>
+            <h2 className="text-2xl font-bold pb-4 md:text-4xl">
+              What Is This?
+            </h2>
+            <p className="text-sm md:text-2xl">
+              I look up startups that look interesting to me, usually on
+              kickstarter.com.
+            </p>
+          </div>
         </div>
       </article>
-      <article className="bg-medium text-light p-4">
-        <div className="text-center mb-4">
-          <div className="pb-1">Projects</div>
-          <h2 className="text-2xl font-bold">Design Examples</h2>
+      <article className="bg-medium text-light p-4 md:py-[64px]">
+        <div className="text-center mb-4 md:mb-8">
+          <div className="pb-1 md:text-2xl">Projects</div>
+          <h2 className="text-2xl font-bold md:text-4xl">Design Examples</h2>
         </div>
         <Swiper
           spaceBetween={16}
@@ -130,78 +134,84 @@ export default function Home() {
           </SwiperSlide>
         </Swiper>
       </article>
-      <article className="bg-light p-4">
-        <div className="text-center mb-4">
-          <div className="pb-1">The Process</div>
-          <h2 className="text-2xl font-bold">What I Do</h2>
-        </div>
-        <div className="flex flex-col gap-8">
-          <div className="bg-white px-4 py-8 rounded-[25px] text-center">
-            <Image
-              src="/images/logos/kickstarter-short.svg"
-              height={23.96}
-              width={81.07}
-              alt="Kickstarter Logo"
-              className="mx-auto mb-4"
-            />
-            <h3 className="text-base font-bold mb-1">Startups</h3>
-            <p className="text-sm">
-              I look up startups that look interesting to me, usually on
-              kickstarter.com.
-            </p>
+      <article className="bg-light">
+        <div className="p-4 md:py-[64px] max-w-5xl mx-auto">
+          <div className="text-center mb-4 md:mb-8">
+            <div className="pb-1 md:text-2xl">The Process</div>
+            <h2 className="text-2xl font-bold md:text-4xl">What I Do</h2>
           </div>
-          <div className="bg-white px-4 py-8 rounded-[25px] text-center">
-            <Image
-              src="/images/logos/figma.svg"
-              height={57}
-              width={38}
-              alt="Figma Logo"
-              className="mx-auto mb-4"
-            />
-            <h3 className="text-base font-bold mb-1">Figma</h3>
-            <p className="text-sm">
-              I look up startups that look interesting to me, usually on
-              kickstarter.com.
-            </p>
-          </div>
-          <div className="bg-white px-4 py-8 rounded-[25px] text-center">
-            <Image
-              src="/images/logos/nextjs.svg"
-              height={66}
-              width={66}
-              alt="Nextjs Logo"
-              className="mx-auto mb-4"
-            />
-            <h3 className="text-base font-bold mb-1">NextJs</h3>
-            <p className="text-sm">
-              I look up startups that look interesting to me, usually on
-              kickstarter.com.
-            </p>
+          <div className="flex flex-col gap-8 md:flex-row md:justify-center">
+            <div className="bg-white px-4 py-8 rounded-[25px] text-center">
+              <Image
+                src="/images/logos/kickstarter-short.svg"
+                height={23.96}
+                width={81.07}
+                alt="Kickstarter Logo"
+                className="mx-auto mb-4"
+              />
+              <h3 className="text-base font-bold mb-1">Startups</h3>
+              <p className="text-sm">
+                I look up startups that look interesting to me, usually on
+                kickstarter.com.
+              </p>
+            </div>
+            <div className="bg-white px-4 py-8 rounded-[25px] text-center">
+              <Image
+                src="/images/logos/figma.svg"
+                height={57}
+                width={38}
+                alt="Figma Logo"
+                className="mx-auto mb-4"
+              />
+              <h3 className="text-base font-bold mb-1">Figma</h3>
+              <p className="text-sm">
+                I look up startups that look interesting to me, usually on
+                kickstarter.com.
+              </p>
+            </div>
+            <div className="bg-white px-4 py-8 rounded-[25px] text-center">
+              <Image
+                src="/images/logos/nextjs.svg"
+                height={66}
+                width={66}
+                alt="Nextjs Logo"
+                className="mx-auto mb-4"
+              />
+              <h3 className="text-base font-bold mb-1">NextJs</h3>
+              <p className="text-sm">
+                I look up startups that look interesting to me, usually on
+                kickstarter.com.
+              </p>
+            </div>
           </div>
         </div>
       </article>
-      <footer className="bg-dark text-[#A8A8A8] p-4">
-        <div className="flex justify-between items-start mb-8">
-          <a href="#" className="flex gap-2 items-center text-xs">
-            <FaGithub /> <span>Source</span>
-          </a>
-          <div>
-            <div className="text-white text-xs mb-2">Ansell Maximilian</div>
-            <ul className="flex flex-col gap-1 text-[10px]">
-              <li className="flex items-center gap-2">
-                <FaGithub /> <span>Github</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <FaLinkedin /> <span>Linkedin</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <VscGlobe /> <span>Website</span>
-              </li>
-            </ul>
+      <footer className="bg-dark text-[#A8A8A8]">
+        <div className="p-4 md:py-[64px] max-w-5xl mx-auto">
+          <div className="flex justify-between items-start mb-8">
+            <a href="#" className="flex gap-2 items-center text-xs md:text-xl">
+              <FaGithub /> <span>Source</span>
+            </a>
+            <div>
+              <div className="text-white text-xs md:text-xl mb-2">
+                Ansell Maximilian
+              </div>
+              <ul className="flex flex-col gap-1 text-[10px] md:text-base">
+                <li className="flex items-center gap-2">
+                  <FaGithub /> <span>Github</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaLinkedin /> <span>Linkedin</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <VscGlobe /> <span>Website</span>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div className="text-xs text-white text-center">
-          &copy; 2023 Ansell Maximilian. All rights reserved.
+          <div className="text-xs md:text-base text-white text-center">
+            &copy; 2023 Ansell Maximilian. All rights reserved.
+          </div>
         </div>
       </footer>
     </main>
